@@ -1,0 +1,43 @@
+#include<stdio.h>
+main()
+{
+ int a[20],t,i=0,j,m,k=0;
+ for(i=0;i<20;i++)
+ scanf("%d",&a[i]);
+ for(k=0;k<9;k++)
+ {
+  m=k;
+  for(j=1+k;j<10;j++)
+  {
+   if(a[j]<a[m])
+   {
+    m=j;
+   }
+  }
+  if(m!=k)
+  {
+   t=a[m];
+           a[m]=a[k];
+           a[k]=t;
+  }
+ }
+ for(k=10;k<19;k++)
+ {
+  m=k;
+  for(j=1+k;j<20;j++)
+  {
+   if(a[j]>a[m])
+   {
+    m=j;
+   }
+  }
+  if(m!=k)
+  {
+   t=a[m];
+        a[m]=a[k];
+          a[k]=t;
+  }
+ }
+for(m=0;m<20;m++)
+ printf("%4d",a[m]);
+} 
